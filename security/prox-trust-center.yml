@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: https://trust.useprox.com
+url: https://trust.useprox.com
+title: Prox Trust Center
+certifications: []
+documents:
+  - name: Data Protection Addendum (DPA)
+    url: https://useprox.com/legal/dpa
+  - name: Privacy Policy
+    url: https://useprox.com/privacy
+  - name: Terms of Service
+    url: https://useprox.com/terms
+evidence:
+  - source: https://trust.useprox.com
+    kind: trust-center
+    detail: >-
+      Dedicated trust center subdomain returns HTTP 200 and renders as the
+      "Prox Trust Center". The certification listing is loaded client-side and
+      could not be machine-extracted from the raw HTML; named certifications are
+      therefore not asserted here. Prox links a Data Protection Addendum, so it
+      operates a formal data-protection program.
+notes: >-
+  Verified trust-center page. No certifications (SOC 2 / ISO 27001 / PCI DSS /
+  HIPAA / FedRAMP) could be confirmed from the public surface, so none are claimed.
+  Re-run to capture certifications once they are published in a crawlable form.

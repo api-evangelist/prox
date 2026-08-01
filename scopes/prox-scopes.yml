@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://mcp.useprox.com/.well-known/oauth-authorization-server
+docs: https://useprox.com/docs/mcp
+schemes:
+  - name: OAuth2
+    source: https://signin.useprox.com/.well-known/oauth-authorization-server
+    issuer: https://signin.useprox.com
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://signin.useprox.com/oauth2/authorize
+        tokenUrl: https://signin.useprox.com/oauth2/token
+      - flow: deviceCode
+        deviceAuthorizationUrl: https://signin.useprox.com/oauth2/device_authorization
+        tokenUrl: https://signin.useprox.com/oauth2/token
+scopes:
+  - scope: openid
+    description: OpenID Connect authentication; issue an ID token for the signed-in user.
+    flows: [authorizationCode, deviceCode]
+    sources: [https://signin.useprox.com/.well-known/openid-configuration]
+  - scope: profile
+    description: Access the user's basic profile claims.
+    flows: [authorizationCode, deviceCode]
+    sources: [https://signin.useprox.com/.well-known/openid-configuration]
+  - scope: email
+    description: Access the user's email address claim.
+    flows: [authorizationCode, deviceCode]
+    sources: [https://signin.useprox.com/.well-known/openid-configuration]
+  - scope: offline_access
+    description: Issue a refresh token so the client can obtain new access tokens without re-prompting.
+    flows: [authorizationCode, deviceCode]
+    sources: [https://signin.useprox.com/.well-known/openid-configuration]
+notes: >-
+  Prox's authorization server (WorkOS AuthKit) advertises the standard OIDC scope
+  set only. Prox does not publish product-level (resource) scopes; MCP access is
+  gated per user by the signed-in workspace's own permissions rather than by OAuth
+  scope, and every tool call is attributed to the user's identity.

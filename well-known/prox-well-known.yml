@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: live probe of /.well-known/ across Prox MCP and sign-in hosts
+hosts:
+  - host: https://mcp.useprox.com
+    documents:
+      - path: /.well-known/oauth-protected-resource   # RFC 9728 (MCP protected resource)
+        status: 200
+        file: prox-mcp-oauth-protected-resource.json
+      - path: /.well-known/oauth-authorization-server  # RFC 8414
+        status: 200
+        file: prox-mcp-oauth-authorization-server.json
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+  - host: https://signin.useprox.com
+    documents:
+      - path: /.well-known/openid-configuration        # OIDC discovery
+        status: 200
+        file: prox-signin-openid-configuration.json
+      - path: /.well-known/oauth-authorization-server  # RFC 8414
+        status: 200
+        file: prox-signin-oauth-authorization-server.json
+  - host: https://useprox.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+notes: >-
+  Prox's MCP server advertises OAuth 2.1 discovery metadata (RFC 8414 + RFC 9728).
+  Identity is delegated to signin.useprox.com (WorkOS AuthKit), which serves both
+  OIDC and OAuth authorization-server metadata. No security.txt is published.

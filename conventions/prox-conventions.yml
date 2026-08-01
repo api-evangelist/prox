@@ -1,0 +1,46 @@
+generated: '2026-07-20'
+method: searched
+source: https://useprox.com/docs/mcp
+summary: >-
+  Prox is delivered as a hosted Model Context Protocol (MCP) connector rather than a
+  traditional REST API. Cross-cutting semantics below are captured from the MCP
+  connector documentation and the server's published OAuth discovery metadata.
+authentication:
+  style: oauth2
+  profile: OAuth 2.1 (PKCE / S256) with dynamic client registration via WorkOS AuthKit
+  token: bearer (Authorization header)
+  api_keys: false
+  ref: authentication/prox-authentication.yml
+authorization:
+  model: per-user workspace permissions
+  detail: >-
+    Access is scoped to the signed-in user's Prox workspace and respects existing
+    account permissions with no privilege escalation. Authorization is enforced by
+    workspace membership/permissions rather than by OAuth resource scopes.
+attribution_and_audit:
+  attributed_to_user: true
+  version_history: true
+  detail: >-
+    Every write (edit_wiki_node) is attributed to the acting user's identity and
+    committed to version history, providing an audit trail for agent-driven edits.
+read_semantics:
+  batch_cap: read_wiki_nodes returns up to 10 selected nodes per call
+  content_types: [markdown, editable text, media URLs]
+idempotency:
+  supported: false
+  detail: >-
+    Prox does not document an idempotency-key contract. edit_wiki_node performs an
+    exact text replacement on a single node (a targeted, self-describing mutation)
+    committed to version history rather than an idempotent upsert.
+pagination:
+  supported: unknown
+  detail: No cursor/offset pagination is documented for the MCP tools.
+versioning:
+  scheme: unversioned MCP endpoint (https://mcp.useprox.com/mcp)
+error_envelope:
+  detail: MCP JSON-RPC error responses; no provider-specific error catalog is published.
+cross_links:
+  authentication: authentication/prox-authentication.yml
+  scopes: scopes/prox-scopes.yml
+  mcp: mcp/prox-mcp.yml
+  well_known: well-known/prox-well-known.yml

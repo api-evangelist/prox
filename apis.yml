@@ -1,7 +1,14 @@
 aid: prox
 name: Prox
-description: Prox is a company surfaced as a portfolio company of bloomberg-beta and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Prox is the AI product specialist for manufacturers of complex physical products.
+  It grounds answers in a company's own manuals and catalogs, cites them to the page,
+  and deploys everywhere customers, dealers, and field technicians already work,
+  including a hosted Model Context Protocol (MCP) connector for ChatGPT, Claude,
+  Copilot, and Gemini. Prox indexes internal technical knowledge and generates visual
+  answers such as troubleshooters, product selectors, sizing calculators, and
+  step-by-step guides. Backed by Y Combinator (F25), Bloomberg Beta, and investors
+  from OpenAI and Microsoft, and based in San Francisco.
 url: https://raw.githubusercontent.com/api-evangelist/prox/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +16,55 @@ x-backed-by:
 - bloomberg-beta
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://useprox.com/favicon.ico
 tags:
 - Company
-apis: []
+- Artificial Intelligence
+- MCP
+- Model Context Protocol
+- Manufacturing
+- Product Support
+- Knowledge Base
+- Documentation
+- Agents
+apis:
+- name: Prox MCP Connector
+  description: >-
+    Hosted MCP server that lets AI assistants query a manufacturer's Prox workspace
+    (products, knowledge trees, wiki nodes) grounded in their manuals and make
+    attributed, version-controlled edits. OAuth 2.1 protected; no API keys.
+  humanURL: https://useprox.com/docs/mcp
+  baseURL: https://mcp.useprox.com
+  tags:
+  - MCP
+  - Model Context Protocol
+  - Agents
+  properties:
+  - type: MCPServer
+    url: mcp/prox-mcp.yml
+  - type: Documentation
+    url: https://useprox.com/docs/mcp
+  - type: Authentication
+    url: authentication/prox-authentication.yml
+  - type: OAuthScopes
+    url: scopes/prox-scopes.yml
+  - type: WellKnown
+    url: well-known/prox-well-known.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -22,4 +72,41 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.prox.inc/
+  url: https://useprox.com/
+- type: DeveloperPortal
+  url: https://useprox.com/docs/mcp
+- type: Documentation
+  url: https://useprox.com/docs/mcp
+- type: MCPServer
+  url: mcp/prox-mcp.yml
+- type: Authentication
+  url: authentication/prox-authentication.yml
+- type: OAuthScopes
+  url: scopes/prox-scopes.yml
+- type: WellKnown
+  url: well-known/prox-well-known.yml
+- type: DomainSecurity
+  url: security/prox-domain-security.yml
+- type: TrustCenter
+  url: security/prox-trust-center.yml
+- type: Conventions
+  url: conventions/prox-conventions.yml
+- type: LLMsTxt
+  url: llms/prox-llms.txt
+- type: Pricing
+  url: https://useprox.com/#pricing
+- type: SignUp
+  url: https://signin.useprox.com/
+- type: TermsOfService
+  url: https://useprox.com/terms
+- type: PrivacyPolicy
+  url: https://useprox.com/privacy
+- type: Support
+  url: mailto:info@useprox.com
+- type: LinkedIn
+  url: https://www.linkedin.com/company/prox-inc/
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v1
