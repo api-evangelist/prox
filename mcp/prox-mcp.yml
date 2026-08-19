@@ -4,11 +4,10 @@ status: published
 source: https://useprox.com/docs/mcp
 server:
   name: prox
-  description: >-
-    Prox's hosted Model Context Protocol connector. Lets ChatGPT, Claude, Copilot,
-    and Gemini query a manufacturer's Prox workspace — products, knowledge trees,
-    and wiki nodes grounded in the company's manuals and catalogs — and make
-    attributed edits, all scoped to the signed-in user's workspace permissions.
+  description: Prox's hosted Model Context Protocol connector. Lets ChatGPT, Claude, Copilot, and Gemini
+    query a manufacturer's Prox workspace — products, knowledge trees, and wiki nodes grounded in the
+    company's manuals and catalogs — and make attributed edits, all scoped to the signed-in user's workspace
+    permissions.
   transport: http
   url: https://mcp.useprox.com/mcp
 authentication:
@@ -17,33 +16,45 @@ authentication:
   identity_provider: WorkOS AuthKit
   authorization_server: https://signin.useprox.com
   resource: https://mcp.useprox.com
-  bearer_methods: [header]
-  scopes: [openid, profile, email, offline_access]
-  notes: >-
-    No API keys. The client authenticates the end user on their behalf; access is
-    scoped to the user's Prox workspace and respects existing account permissions
-    without privilege escalation. All changes are attributed to the user's identity
-    and recorded in version history.
+  bearer_methods:
+  - header
+  scopes:
+  - openid
+  - profile
+  - email
+  - offline_access
+  notes: No API keys. The client authenticates the end user on their behalf; access is scoped to the user's
+    Prox workspace and respects existing account permissions without privilege escalation. All changes
+    are attributed to the user's identity and recorded in version history.
 tools:
-  - name: list_products
-    description: Retrieve workspace products with their IDs, SKUs, descriptions, thumbnails, and knowledge-node counts.
-    access: read-only
-  - name: get_product_tree
-    description: Display a product's complete knowledge hierarchy with node IDs and parent/child relationships.
-    access: read-only
-  - name: read_wiki_nodes
-    description: Fetch up to 10 selected nodes, including markdown content, editable text, and media URLs.
-    access: read-only
-  - name: edit_wiki_node
-    description: Perform exact text replacements on a single node and commit changes to version history.
-    access: write
+- name: list_products
+  description: Retrieve workspace products with their IDs, SKUs, descriptions, thumbnails, and knowledge-node
+    counts.
+  access: read-only
+- name: get_product_tree
+  description: Display a product's complete knowledge hierarchy with node IDs and parent/child relationships.
+  access: read-only
+- name: read_wiki_nodes
+  description: Fetch up to 10 selected nodes, including markdown content, editable text, and media URLs.
+  access: read-only
+- name: edit_wiki_node
+  description: Perform exact text replacements on a single node and commit changes to version history.
+  access: write
 clients:
-  - name: Claude.ai (web/mobile)
-    setup: Settings -> Connectors -> Add custom connector -> paste server URL -> authenticate via signin.useprox.com
-  - name: Claude Desktop
-    setup: Settings -> Connectors -> Add custom connector -> enter URL -> sign in
-  - name: Claude Code
-    setup: Add the server via CLI, then run /mcp to authenticate
-  - name: ChatGPT
-  - name: Microsoft Copilot
-  - name: Google Gemini
+- name: Claude.ai (web/mobile)
+  setup: Settings -> Connectors -> Add custom connector -> paste server URL -> authenticate via signin.useprox.com
+- name: Claude Desktop
+  setup: Settings -> Connectors -> Add custom connector -> enter URL -> sign in
+- name: Claude Code
+  setup: Add the server via CLI, then run /mcp to authenticate
+- name: ChatGPT
+- name: Microsoft Copilot
+- name: Google Gemini
+deployment:
+  mode: remote
+  endpoint: https://mcp.useprox.com/mcp
+  verified: probed
+  probe: live
+  tools: 4
+  checked: '2026-08-12'
+  source: catalog MCP census
