@@ -36,6 +36,15 @@ tags:
 - Company
 - Artificial Intelligence
 - MCP
+- Manufacturing
+- Product Support
+- Knowledge Base
+- Documentation
+- Agents
+tags_raw:
+- Company
+- Artificial Intelligence
+- MCP
 - Model Context Protocol
 - Manufacturing
 - Product Support
@@ -51,6 +60,9 @@ apis:
   humanURL: https://useprox.com/docs/mcp
   baseURL: https://mcp.useprox.com
   tags:
+  - MCP
+  - Agents
+  tags_raw:
   - MCP
   - Model Context Protocol
   - Agents
