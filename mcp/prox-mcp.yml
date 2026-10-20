@@ -28,17 +28,20 @@ authentication:
     are attributed to the user's identity and recorded in version history.
 tools:
 - name: list_products
-  description: Retrieve workspace products with their IDs, SKUs, descriptions, thumbnails, and knowledge-node
-    counts.
+  description: Use first to discover the products available in this Prox tenant. Returns product IDs,
+    SKUs, summaries, thumbnails, URLs, and knowledge-node counts without changing anything.
   access: read-only
 - name: get_product_tree
-  description: Display a product's complete knowledge hierarchy with node IDs and parent/child relationships.
+  description: Use after list_products to inspect one product's knowledge hierarchy. Returns every node
+    ID and parent/child relationship so a model can choose which nodes to read next.
   access: read-only
 - name: read_wiki_nodes
-  description: Fetch up to 10 selected nodes, including markdown content, editable text, and media URLs.
+  description: Read up to 10 selected product knowledge nodes. Returns markdown content, exact editable_content
+    for safe text replacements, and public media URLs. Call this before edit_wiki_node.
   access: read-only
 - name: edit_wiki_node
-  description: Perform exact text replacements on a single node and commit changes to version history.
+  description: Apply a small exact old_text to new_text replacement to one wiki node body, then commit
+    the change to the product Git repo. Use only after read_wiki_nodes provides the exact editable_content.
   access: write
 clients:
 - name: Claude.ai (web/mobile)
@@ -83,3 +86,4 @@ tool_quality:
   scored: false
   note: Facts from the saved tools/list capture (mcp_tool_quality.py); recorded, not scored. Checks learned
     from Glimind's agent-readiness audit.
+tools_count: 4
