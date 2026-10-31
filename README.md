@@ -64,6 +64,110 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Prox is a company surfaced as a portfolio company of bloomberg-beta and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Prox is the AI product specialist for manufacturers of complex physical products. It grounds answers in a company's own manuals and catalogs, cites them to the page, and deploys everywhere customers, dealers, and field technicians already work, including a hosted Model Context Protocol (MCP) connector for ChatGPT, Claude, Copilot, and Gemini. Prox indexes internal technical knowledge and generates visual answers such as troubleshooters, product selectors, sizing calculators, and step-by-step guides. Backed by Y Combinator (F25), Bloomberg Beta, and investors from OpenAI and Microsoft, and based in San Francisco.
 
-Backed by: bloomberg-beta — https://www.prox.inc/
+**Areas:** Company · Artificial Intelligence · MCP · Manufacturing · Product Support · Knowledge Base · Documentation · Agents
+
+## Prox on APIs.io
+
+Everything profiled for Prox is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/prox/](https://apis.io/providers/prox/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Prox MCP Connector](https://apis.io/apis/prox/prox-mcp-connector/) — Hosted MCP server that lets AI assistants query a manufacturer's Prox workspace (products, knowledge trees, wiki nodes) grounded in their manuals and make…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [prox](https://apis.io/servers/prox/prox/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Prox Authentication](https://apis.io/security/prox/prox-authentication/)
+- [Prox Domain Security](https://apis.io/security/prox/prox-domain-security/)
+- [Prox Trust Center](https://apis.io/security/prox/prox-trust-center/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Prox Scopes](https://apis.io/scopes/prox/prox-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Prox Plans Pricing](https://apis.io/plans/prox/prox-plans-pricing/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://useprox.com/)
+- [Documentation](https://useprox.com/docs/mcp)
+- [Pricing](https://useprox.com/#pricing)
+- [Sign up](https://signin.useprox.com/)
+- [Terms of service](https://useprox.com/terms)
+- [Privacy policy](https://useprox.com/privacy)
+
+## API Evangelist rating
+
+**Kin Score 26.6** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 47.4 |
+
+**Agent readiness 27.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 31.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/prox/](https://apis.io/providers/prox/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Prox: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/prox/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
